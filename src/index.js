@@ -3,10 +3,16 @@ import { render } from 'react-dom';
 
 let codingData = {
 	total: 200,
-	goal: 200
+	goal: 300
 };
 
 class CodingDayCounter extends Component {
+	getPercent = decimal => {
+		return decimal * 100 + '%'
+	};
+	getProgressToGoal = (total, goal) => {
+		return this.getPercent(total/goal)
+	}
 	render() {
 		const {total, goal} = this.props
 		return (
@@ -16,6 +22,7 @@ class CodingDayCounter extends Component {
 				</div>
 				<div>
 					<p>Goal Days: {goal}</p>
+					<p>Progress: {this.getProgressToGoal(total, goal)}</p>
 				</div>
 			</section>
 		)
