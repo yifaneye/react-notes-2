@@ -1,23 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var style = {
-	color: "green",
-	fontFamily: 'Arial'
+let codingData = {
+	total: 200,
+	goal: 200
 };
 
-class Message extends React.Component {
+class CodingDayCounter extends React.Component {
 	render() {
 		return (
-			<div style={{color: this.props.color}}>
-				<h1>Hello {this.props.name}</h1>
-				<p>I am still Allen {this.props.number}</p>
-			</div>
+			<section>
+				<div>
+					<p>Total Days: {this.props.total}</p>
+				</div>
+				<div>
+					<p>Goal Days: {this.props.goal}</p>
+				</div>
+			</section>
 		)
 	}
 }
 
 ReactDOM.render(
-	<Message color="blue" name="Bob" number={3} />,
+	<CodingDayCounter total={codingData.total} goal={codingData.goal} />,
 	document.getElementById('root')
 );
