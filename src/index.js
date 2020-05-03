@@ -18,10 +18,20 @@ const Book = ({title, nPages, author, free}) => {
 	)
 };
 
+const OpenTime = () =>
+	<div>
+		<i>Opens at 9am</i>
+	</div>;
+
+const CloseTime = () =>
+	<div>
+		<i>Closes at 5pm</i>
+	</div>;
+
 class Store extends Component {
 	state = {
 		open: true,
-		free: true
+		free: true,
 	};
 	toggleOpenness = () => {
 		this.setState(prevState => ({
@@ -34,6 +44,7 @@ class Store extends Component {
 		return (
 			<div>
 				<h1>iBook Store is <strong onClick={this.toggleOpenness}>{this.state.open ? 'open' : 'closed'}</strong></h1>
+				{this.state.open ? <CloseTime /> : <OpenTime />}
 				{books.map(
 					(book, i) => <Book key={i} title={book.title} nPages={book.nPages} author={book.author} free={this.state.free}/>
 				)}
