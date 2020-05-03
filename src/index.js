@@ -7,9 +7,13 @@ var style = {
 };
 
 const title = React.createElement(
-	'h1',
+	'ul',
 	{id: 'title', className:'header', style: style},
-	'Hello Allen'
+	React.createElement(
+		'li',
+		{},
+		'item'
+	)
 );
 
 ReactDOM.render(
