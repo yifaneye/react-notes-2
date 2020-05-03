@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
+let bookStock = [
+	{"title": "Jane Eyre", "nPages": 592, "author": "Charlotte Brontë"},
+	{"title": "Pride and Prejudice", "nPages": 448, "author": "Jane Austen"},
+	{"title": "War and Peace", "nPages": 1225, "author": "Leo Tolstoy"},
+];
+
 const Book = ({title, nPages, author}) => {
 	return (
 		<section>
@@ -11,18 +17,18 @@ const Book = ({title, nPages, author}) => {
 	)
 };
 
-const Store = () => {
+const Store = ({books}) => {
 	return (
 		<div>
 			<h1>iBook Store</h1>
-			<Book title="Jane Eyre" nPages={592} author="Charlotte Brontë" />
-			<Book title="Pride and Prejudice" nPages={448} author="Jane Austen" />
-			<Book title="War and Peace" nPages={1225} author="Leo Tolstoy" />
+			{books.map(
+				(book, i) => <Book key={i} title={book.title} nPages={book.nPages} author={book.author} />
+			)}
 		</div>
 	)
 };
 
 render(
-	<Store />,
+	<Store books={bookStock}/>,
 	document.getElementById('root')
 );
