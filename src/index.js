@@ -18,18 +18,12 @@ const Book = ({title, nPages, author}) => {
 };
 
 class Store extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			open: true
-		};
-		this.toggleOpenness = this.toggleOpenness.bind(this)
-	}
-	toggleOpenness() {
+	state = { open: true };
+	toggleOpenness = () => {
 		this.setState(prevState => ({
 			open: !prevState.open
 		}))
-	}
+	};
 	render() {
 		// const books = this.props.books;
 		const { books } = this.props;
