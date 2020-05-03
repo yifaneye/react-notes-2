@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 let codingData = {
 	total: 200,
 	goal: 200
 };
 
-class CodingDayCounter extends React.Component {
+class CodingDayCounter extends Component {
 	render() {
 		return (
 			<section>
@@ -21,7 +21,7 @@ class CodingDayCounter extends React.Component {
 	}
 }
 
-ReactDOM.render(
+render(
 	<CodingDayCounter total={codingData.total} goal={codingData.goal} />,
 	document.getElementById('root')
 );
