@@ -1,0 +1,20 @@
+  495  open
+  496  o
+  497  o .
+  498  git clone https://github.com/alibaba-fusion/materials.git
+  499  https://github.com/alvarotrigo/fullPage.js.git
+  500  git clone https://github.com/alvarotrigo/fullPage.js.git
+  501  create-react-app myapp
+  502  create-react-app myreactapp
+  503  ls
+  504  pwd
+  505  cd ../../..
+  506  ls
+  507  cd ..
+  508  cd ..
+  509  ls
+  510  ls
+  511  cd myreactapp/
+  512  npm start
+  513  ----------------------
+  514  history 20 > mycli.txt
