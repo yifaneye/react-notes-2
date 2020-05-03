@@ -6,10 +6,18 @@ var style = {
 	fontFamily: 'Arial'
 };
 
+class Message extends React.Component {
+	render() {
+		return (
+			<div style={style}>
+				<h1>Hello Again</h1>
+				<p>I am still Allen</p>
+			</div>
+		)
+	}
+}
+
 ReactDOM.render(
-	<div style={style}>
-		<h1>Hello Allen</h1>
-		<p>I am Allen</p>
-	</div>,
+	<Message />,
 	document.getElementById('root')
 );
