@@ -26,9 +26,9 @@ class Store extends Component {
 		this.toggleOpenness = this.toggleOpenness.bind(this)
 	}
 	toggleOpenness() {
-		this.setState({
-			open: !this.state.open
-		})
+		this.setState(prevState => ({
+			open: !prevState.open
+		}))
 	}
 	render() {
 		// const books = this.props.books;
