@@ -7,18 +7,22 @@ let bookStock = [
 	{"title": "War and Peace", "nPages": 1225, "author": "Leo Tolstoy"},
 ];
 
-const Book = ({title, nPages, author}) => {
+const Book = ({title, nPages, author, free}) => {
 	return (
 		<section>
 			<h2>{title}</h2>
 			<p>{nPages} pages</p>
 			<i>by {author}</i>
+			<p>{free ? 'Free giveaway :)' : ''}</p>
 		</section>
 	)
 };
 
 class Store extends Component {
-	state = { open: true };
+	state = {
+		open: true,
+		free: true
+	};
 	toggleOpenness = () => {
 		this.setState(prevState => ({
 			open: !prevState.open
@@ -31,7 +35,7 @@ class Store extends Component {
 			<div>
 				<h1>iBook Store is <strong onClick={this.toggleOpenness}>{this.state.open ? 'open' : 'closed'}</strong></h1>
 				{books.map(
-					(book, i) => <Book key={i} title={book.title} nPages={book.nPages} author={book.author}/>
+					(book, i) => <Book key={i} title={book.title} nPages={book.nPages} author={book.author} free={this.state.free}/>
 				)}
 			</div>
 		)
