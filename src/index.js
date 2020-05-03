@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-let codingData = {
-	total: 200,
-	goal: 300
-};
-
-const getPercent = decimal => {
-	return decimal * 100 + '%'
-};
-const getProgressToGoal = (total, goal) => {
-	return getPercent(total/goal)
-};
-
-const CodingDayCounter = ({total, goal}) => {
+const Book = ({title, nPages, author}) => {
 	return (
 		<section>
-			<div>
-				<p>Total Days: {total}</p>
-			</div>
-			<div>
-				<p>Goal Days: {goal}</p>
-				<p>Progress: {getProgressToGoal(total, goal)}</p>
-			</div>
+			<h2>{title}</h2>
+			<p>{nPages} pages</p>
+			<i>by {author}</i>
 		</section>
 	)
 };
 
+const Store = () => {
+	return (
+		<div>
+			<h1>iBook Store</h1>
+			<Book title="Jane Eyre" nPages={592} author="Charlotte Brontë" />
+			<Book title="Pride and Prejudice" nPages={448} author="Jane Austen" />
+			<Book title="War and Peace" nPages={1225} author="Leo Tolstoy" />
+		</div>
+	)
+};
+
 render(
-	<CodingDayCounter total={codingData.total} goal={codingData.goal} />,
+	<Store />,
 	document.getElementById('root')
 );
