@@ -6,28 +6,26 @@ let codingData = {
 	goal: 300
 };
 
-class CodingDayCounter extends Component {
-	getPercent = decimal => {
-		return decimal * 100 + '%'
-	};
-	getProgressToGoal = (total, goal) => {
-		return this.getPercent(total/goal)
-	}
-	render() {
-		const {total, goal} = this.props
-		return (
-			<section>
-				<div>
-					<p>Total Days: {total}</p>
-				</div>
-				<div>
-					<p>Goal Days: {goal}</p>
-					<p>Progress: {this.getProgressToGoal(total, goal)}</p>
-				</div>
-			</section>
-		)
-	}
-}
+const getPercent = decimal => {
+	return decimal * 100 + '%'
+};
+const getProgressToGoal = (total, goal) => {
+	return getPercent(total/goal)
+};
+
+const CodingDayCounter = ({total, goal}) => {
+	return (
+		<section>
+			<div>
+				<p>Total Days: {total}</p>
+			</div>
+			<div>
+				<p>Goal Days: {goal}</p>
+				<p>Progress: {getProgressToGoal(total, goal)}</p>
+			</div>
+		</section>
+	)
+};
 
 render(
 	<CodingDayCounter total={codingData.total} goal={codingData.goal} />,
