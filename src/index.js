@@ -8,13 +8,14 @@ let codingData = {
 
 class CodingDayCounter extends Component {
 	render() {
+		const {total, goal} = this.props
 		return (
 			<section>
 				<div>
-					<p>Total Days: {this.props.total}</p>
+					<p>Total Days: {total}</p>
 				</div>
 				<div>
-					<p>Goal Days: {this.props.goal}</p>
+					<p>Goal Days: {goal}</p>
 				</div>
 			</section>
 		)
