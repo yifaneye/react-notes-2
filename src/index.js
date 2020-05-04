@@ -29,6 +29,11 @@ const CloseTime = () =>
 	</div>;
 
 class Store extends Component {
+	static defaultProps = {
+		books: [
+			{"title": "Title", "nPages": 100, "author": "Author"},
+		]
+	};
 	state = {
 		open: true,
 		free: true,
@@ -98,7 +103,7 @@ class FavColorForm extends Component {
 
 render(
 	<div>
-		<Store books={bookStock}/>
+		<Store />
 		<FavColorForm />
 	</div>,
 	document.getElementById('root')
