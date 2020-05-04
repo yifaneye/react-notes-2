@@ -76,7 +76,30 @@ class Store extends Component {
 	}
 }
 
+class FavColorForm extends Component {
+	state = { color: '' };
+	newColor = e =>
+		this.setState({color: e.target.value});
+	submit = e => {
+		console.log('New Color: ' + this.state.color);
+		e.preventDefault()
+	};
+	render() {
+		return (
+			<form onSubmit={this.submit}>
+				<label>Favourite Color:
+					<input type="color" onChange={this.newColor} />
+				</label>
+				<button>Submit</button>
+			</form>
+		)
+	}
+}
+
 render(
-	<Store books={bookStock}/>,
+	<div>
+		<Store books={bookStock}/>
+		<FavColorForm />
+	</div>,
 	document.getElementById('root')
 );
