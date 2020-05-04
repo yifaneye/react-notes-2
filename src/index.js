@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
+import PropTypes from 'prop-types'
+
 
 let bookStock = [
 	{"title": "Jane Eyre", "nPages": 592, "author": "Charlotte Brontë"},
@@ -100,6 +102,17 @@ class FavColorForm extends Component {
 		)
 	}
 }
+
+Store.propTypes = {
+	books: PropTypes.array
+};
+
+Book.propTypes = {
+	title: PropTypes.string,
+	nPages: PropTypes.number,
+	author: PropTypes.string,
+	free: PropTypes.bool
+};
 
 render(
 	<div>
