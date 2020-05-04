@@ -7,7 +7,7 @@ let bookStock = [
 	{"title": "War and Peace", "nPages": 1225, "author": "Leo Tolstoy"},
 ];
 
-const Book = ({title, nPages, author, free}) => {
+const Book = ({title="No title provided", nPages="Unknown pages", author="Unknown author", free}) => {
 	return (
 		<section>
 			<h2>{title}</h2>
@@ -103,7 +103,7 @@ class FavColorForm extends Component {
 
 render(
 	<div>
-		<Store />
+		<Store books={bookStock}/>
 		<FavColorForm />
 	</div>,
 	document.getElementById('root')
